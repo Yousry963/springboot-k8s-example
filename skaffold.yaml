@@ -1,0 +1,13 @@
+apiVersion: skaffold/v2beta29
+kind: Config
+metadata:
+  name: springboot-k8s-example-skaffold
+build:
+  artifacts:
+  - image: springboot-k8s-example
+    jib: {}
+deploy:
+  kubectl:
+    manifests:
+    - k8s/deployment.yaml
+    - k8s/service.yaml
